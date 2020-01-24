@@ -1,11 +1,16 @@
 void main() {
   final cityName = 'Mumbai';
-	final String countryName = name();
+  final String countryName = name();
+  print(cityName);
+  print(countryName);
 
-	const PI = 3.14159;
-	const double gravity = 9.8;
+  const PI = 3.14159;
+  const double gravity = 9.8;
+  print(PI);
+  print(gravity);
 
   final continentName = name();
+  print(continentName);
   /*
   This can be done because final accepts a value at run time,
   so it is not fixed when compiling the program
@@ -19,10 +24,10 @@ void main() {
   */
 }
 
-String name(){
+String name() {
   return 'Europe';
 }
 
-double number(){
+double number() {
   return 3.14159;
 }
