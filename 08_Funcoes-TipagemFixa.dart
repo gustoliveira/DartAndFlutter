@@ -14,11 +14,19 @@ main() {
 
   findVolume(10,
       height: 20, breadth: 5); // Sequence doesn't matter in Named Parameter
+
+//Função anonima: o que está dentro das chaves após os parenteses, fica como a função botaoCriado();
+  criarBotao("Botão De GPS", () {
+    print('Botão Criado');
+  });
 }
 
 double calculaIMC(int peso, double altura) {
   return peso / (altura * altura);
 }
+
+// Arrow Function, é equivalente a função anterior
+double calculaIMC2(int peso, double altura) => peso / (altura * altura);
 
 mostraResultado(double IMCcalc) {
   if (IMCcalc < 18.5) {
@@ -61,4 +69,14 @@ void test(String nome1, {String nome2 = "Foi", String nome3 = "Foizão"}) {
   print(nome1);
   print(nome2);
   print(nome3);
+}
+
+// FUNÇÃO RECEBENDO OUTRA FUNÇÃO COMO PARAMETRO
+void botaoCriado() {
+  print("Botão criado");
+}
+
+void criarBotao(String texto, Function botaoCriado) {
+  print(texto);
+  botaoCriado();
 }
