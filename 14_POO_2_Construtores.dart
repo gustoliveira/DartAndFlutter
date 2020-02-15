@@ -1,17 +1,13 @@
-class Pessoa {
-  String nome, sobrenome, sexo;
-  int idade;
+class Casa {
+  String rua;
+  int numero, qntQuartos;
 
   // Construtor da classe
-  Pessoa(String nome, String sobrenome, String sexo, int idade) {
-    this.nome = nome;
-    this.sobrenome = sobrenome;
-    this.sexo = sexo;
-    this.idade = idade;
+  Casa(String rua, int numero, int qntQuartos) {
+    this.rua = rua;
+    this.numero = numero;
+    this.qntQuartos = qntQuartos;
   }
-
-  // Arrow function: quando apenas uma instrução, pode se fazer desta forma
-  String nomeCompleto() => nome + ' ' + sobrenome;
 }
 
 class Animal {
@@ -28,22 +24,36 @@ class Animal {
   }
 }
 
-class Casa {
-  String rua;
-  int numero, qntQuartos;
+class Pessoa {
+  String nome, sobrenome, sexo;
+  int idade;
 
   // Para facilitar ao máximo, há essa sintaxe no Dart
   // Chama-se construtor inteligente
-  Casa({this.rua, this.numero, this.qntQuartos});
+  Pessoa({this.nome, this.sobrenome, this.sexo, this.idade});
+
+  // Named constructor: outra maneira de declarar
+  Pessoa.nasceu({this.nome, this.sobrenome, this.sexo}) {
+    idade = 0;
+    print(nomeCompleto());
+  }
+
+  // Arrow function: quando apenas uma instrução, pode se fazer desta forma
+  String nomeCompleto() => nome + ' ' + sobrenome;
 }
 
 main() {
-  Pessoa pessoa = Pessoa("Gustavo", "de Oliveira Ferreira", "M", 18);
-  print(pessoa.nomeCompleto());
+  Casa casa = Casa("Barão de Jeremoabo", 69, 0);
+  print(casa.numero);
 
   Animal animal = Animal(especie: "Cachoro", peso: 10, tamanho: 100);
   print(animal.especie);
 
-  Casa casa = Casa(rua: "Barão de Jeremoabo", numero: 69, qntQuartos: 0);
-  print(casa.numero);
+  Pessoa pessoa = Pessoa(
+      nome: "Gustavo", sobrenome: "de Oliveira Ferreira", sexo: "M", idade: 18);
+  print(pessoa.nomeCompleto());
+
+  Pessoa nene = Pessoa.nasceu(
+      nome: "Gustavo", sobrenome: "de Oliveira Ferreira", sexo: "M");
+  print(nene.idade);
 }
