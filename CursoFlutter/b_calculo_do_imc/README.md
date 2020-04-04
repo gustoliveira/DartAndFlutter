@@ -1,16 +1,14 @@
-# b_calculo_do_imc
+## O QUE FOI ESTUDADO NESTE APP
 
-A new Flutter application.
+Widget Scaffold:
+* Widget que implementa uma estrutura brasica com design visual baseado no material. Contem: AppBar, Drawers, Snack bars, Bottom Sheets
 
-## Getting Started
+* 'AppBar()': _widget_ pertencente ao atributo 'appBar' do Scaffold (title: _atributo_ que recebe um Text(, centerTitle: _atributo_ para centralizar true ou false, backgroundColor: _atributo_ que recebe Colors.alguma cor, actions: ações que estarão na barra)
 
-This project is a starting point for a Flutter application.
+crossAxisAlignment: _atributo_ que mexe no posicionamento do eixo secundario de Row e Column
 
-A few resources to get you started if this is your first Flutter project:
+Container pode ser usado quando se quer definir o tamanho de um widget (altura e largura). Por exemplo um RaisedButton (botão com fundo), coloca-se ele como child de um container
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Widget SingleChildScrollView:
+* Widget_ que recebe apenas um child, que possibilita o teclado ficar por cima
+dos widgets
