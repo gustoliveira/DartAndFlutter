@@ -179,6 +179,7 @@ class _HomeState extends State<Home> {
 
         _saveData(); // Salvando a remoção
 
+        // SNACKBAR
         // Cria uma snack bar (mensagem) quando remover algum item
         final snack = SnackBar(
           content: Text("\"${_lastRemoved["title"]}\" foi removido! "),
