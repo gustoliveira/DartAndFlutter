@@ -89,6 +89,8 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+
+  // Widget para mostrar que está carregando os GIFs
   Widget _searchingGIFsWatingNone(){
     return Container(
       alignment: Alignment.center,
@@ -107,35 +109,35 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _createGIFsTable(BuildContext context, AsyncSnapshot snapshot){
-    return GridView.builder(
+    return GridView.builder( // Creates a scrollable, 2D array of widgets that are created on demand (MOSTRA EM FORMATO DE GRID)
       padding: EdgeInsets.all(10),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 10,
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount( // Organizar widgets em grid
+        crossAxisCount: 2, // Quantos widgets irão ser mostrados
+        crossAxisSpacing: 10, // Espaço entre eles
         mainAxisSpacing: 10
       ),
       itemCount: _getCount(snapshot.data["data"]),
       itemBuilder: (context, index){
         if(_search == null || index < snapshot.data["data"].length){
-          return GestureDetector(
+          return GestureDetector( // Permite que Widget seja clicavel para fazer alguma ação com ele
             child: FadeInImage.memoryNetwork(
               placeholder: kTransparentImage,
               image: snapshot.data["data"][index]["images"]["fixed_height"]["url"],
               height: 300,
               fit: BoxFit.cover,
             ),
-            onTap: (){
-              Navigator.push(context,
+            onTap: (){ // Ao apertar apenas uma vez
+              Navigator.push(context, // Chama a outra ui
                 MaterialPageRoute(builder: (context) => GIFsPage(snapshot.data["data"][index]))
               );
             },
-            onLongPress: (){
+            onLongPress: (){ // Ao apertar longamente
               Share.share(snapshot.data["data"][index]["images"]["fixed_height"]["url"]);
             },
           );
         }
         else {
-          return Container(
+          return Container( // Para que carregue mais aplicativos
             child: GestureDetector(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
