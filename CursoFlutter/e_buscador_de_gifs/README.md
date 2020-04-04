@@ -1,16 +1,24 @@
-# e_buscador_de_gifs
+## O QUE FOI ESTUDADO NESTE APP
 
-A new Flutter project.
+Navegação (Navigator) simples:
+1. Criar um diretório com as interfaces
+2. Criar uma classe (stateful ou stateless) que contenha a ui
+3. Importar a interface que vai ser chamada na interface que chama
+4. Chamar a função _Navigator.push_, que recebe o _context_ e a outra função _MaterialPageRouter_ (a rota para a outra página), neste última voce vai passar um _builder_ que o context e que retorna a classe da ui
 
-## Getting Started
+GridView:
+* Organiza widgets em um grid (rede)
+* Widget SliverGridDelegateWithFixedCrossAxisCount (Pode configurar quantos widgets vão ser dispostos e o espaçamento)
 
-This project is a starting point for a Flutter application.
+Compartilhar arquivos:
+* Utilização da biblioteca 'package:share/share.dart'
+* Permite fazer o share de arquivos por outras plataformas, como WhatsApp, Twitter, email, etc
 
-A few resources to get you started if this is your first Flutter project:
+Widget GestureDetector:
+* Widget que percebe que está sendo clicado e assim pode fazer alguma ação
+* pode fazer açoes diferentes no onTap() e onLongPress()
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Circulo de progresso de carregamento quando se abre o aplicativo ou volta a home
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Aparecer widget (no caso deste aplicativo, uma imagem) em Fade:
+* uso de 'package:transparent_image/transparent_image.dart'
